@@ -1,0 +1,46 @@
+*{
+    text-align: center;
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.header{
+    margin-top: 6rem;
+
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.select{
+    margin-top: 5rem;
+}
+
+.select__province{
+    display: inline;
+}
+
+form > button{
+    width: 4rem;
+    height: 2rem;
+}
+
+#province{
+    width: 25rem;
+    height: 2rem;
+}
+
+.footer{
+
+    margin-top: 5rem;
+    display: inline-flex;
+}
+
+.footer > div{
+
+    margin-left: 3rem;
+}

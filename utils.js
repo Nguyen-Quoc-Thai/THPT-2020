@@ -1,6 +1,5 @@
 const { default: Axios } = require("axios")
 
-
 function getId(idProv, idStudent){
 
     if(idProv.length === 1){
@@ -59,4 +58,4 @@ async function testFunc (){
     console.log("Res: " + res)
 }
 
-testFunc()
+module.exports = { getId, getMaxIdOfProv }
