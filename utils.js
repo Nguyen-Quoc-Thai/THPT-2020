@@ -1,5 +1,17 @@
 const { default: Axios } = require("axios")
 
+const provinces_1 = [
+    "Hà Nội", "Tp Hồ Chí Minh", "Hải Phòng", "Đà Nẵng", "Hà Giang", "Cao Bằng", "Lai Châu", "Lào Cai",
+    "Tuyên Quang", "Lạng Sơn", "Bắc Kạn", "Thái Nguyên", "Yên Bái", "Sơn La", "Phú Thọ", "Vĩnh Phúc",
+    "Quảng Ninh", "Bắc Giang", "Bắc Ninh"]
+
+const provinces_2 = ["Hải Dương", "Hưng Yên", "Hòa Bình", "Hà Nam", "Nam Định", "Thái Bình", "Ninh Bình",
+    "Thanh Hóa", "Nghệ An", "Hà Tĩnh", "Quảng Bình", "Quảng Trị", "Thừa Thiên Huế",
+    "Quảng Nam", "Quảng Ngãi", "Kon Tum", "Bình Định", "Gia Lai", "Phú Yên", "Đắk Lắk", "Khánh Hòa",
+    "Lâm Đồng", "Bình Phước", "Bình Dương", "Ninh Thuận", "Tây Ninh", "Bình Thuận", "Đồng Nai", "Long An",
+    "Đồng Tháp", "An Giang", "Bà Rịa- Vũng Tàu", "Tiền Giang", "Kiên Giang", "Cần Thơ", "Bến Tre", "Vĩnh Long",
+    "Trà Vinh", "Sóc Trăng", "Bạc Liêu", "Cà Mau", "Điện Biên", "Đắk Nông", "Hậu Giang"]
+
 function getId(idProv, idStudent){
 
     if(idProv.length === 1){
@@ -58,4 +70,4 @@ async function testFunc (){
     console.log("Res: " + res)
 }
 
-module.exports = { getId, getMaxIdOfProv }
+module.exports = { getId, getMaxIdOfProv, provinces_1, provinces_2 }

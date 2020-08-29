@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./css/Home.css' type='text/css')
+  title THPT 2020
+.container
+  .header
+    h2.school
+      | University of Science
+  // End header
+  .select
+    form(action='/export' method='POST')
+      .select__province
+        select#province(name='provCode')
+          option(value='0') Select province
+          each val, index in provinces_1
+            option(value=index + 1)= val
+          each val, index in provinces_2
+            option(value=index + 21)= val
+      .select__limit
+        input#limit(type='number' name='limit' placeholder='Limit record (option)')
+      button(type='submit') GET
+  .footer
+    | About author:
+    .fb
+      a(href='#') Facebook
+    .gb
+      a(href='#') Github
+    .lkd
+      a(href='#') Linkedin
+  // End footer
+// End container

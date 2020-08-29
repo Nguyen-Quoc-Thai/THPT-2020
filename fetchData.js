@@ -7,8 +7,6 @@ const { getId, getMaxIdOfProv } = require('./utils')
 const cols = ['Code', 'Math', 'Literature', 'English', 'Physics', 'Chemistry',
 'Biology', 'History', 'Geography', 'Civic']
 
-const BASE_URL = "https://diemthi.vnanet.vn"
-
 let idProv = 0      // Province code
 let fileName = ''
 
@@ -23,7 +21,7 @@ function fetchByStudentID (id) {
 
     let promise = resolve => {
 
-        axios.get(`${BASE_URL}/Home/SearchBySobaodanhFile?code=${id}&nam=2020`)
+        axios.get(`https://diemthi.vnanet.vn/Home/SearchBySobaodanhFile?code=${id}&nam=2020`)
         .then(res => {
 
             const scores = res.data
@@ -89,4 +87,4 @@ async function writeToFile (idProv, limit = 99999) {
     }))
 }
 
-writeToFile(8)
+module.exports = { writeToFile }
