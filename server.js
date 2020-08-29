@@ -25,11 +25,12 @@ app.get('/', function (req, res) {
 })
 
 // Request export
-app.post('/export', async function (req, res) {
+app.post('/export', function (req, res) {
 
-    const {provCode, limit} = await req.body
+    const {provCode, limit} = req.body
 
-    await writeToFile( + provCode, + limit)
+    if (limit) writeToFile( +provCode, +limit)
+    else writeToFile( +provCode )
 
     res.redirect('/')
 })

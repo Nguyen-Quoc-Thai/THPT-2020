@@ -11,7 +11,7 @@ let idProv = 0      // Province code
 let fileName = ''
 
 const MIN = -1      // Using for find total students register of province
-const MAX = 81000
+const MAX = 100000
 
 /**
  * Output: Promise (array 10 elements [Province code, 9 subScores])
@@ -60,6 +60,7 @@ function fetchByStudentID (id) {
 async function fetchByProvinceID(id, limit = 99999) {
 
     const size = await getMaxIdOfProv(id, MIN, MAX)
+    console.log('\nSize: ' + size + '\n')
 
     const promises = Array(limit < size ? limit : size).fill(0).map((promise, index) => fetchByStudentID(getId(id + '', index + 1 + '')))
 
@@ -79,12 +80,16 @@ async function writeToFile (idProv, limit = 99999) {
 
     fs.writeFileSync(`${idProv}_scores_2020.csv`, cols.join(',') + '\n')
 
-    Promise.all(promises.map(async each => {
+    await Promise.all(promises.map(async each => {
+
         await each.then(val => {
-            console.log((val.join(';')))
+
+            console.log((val.join(',')))
             fs.appendFileSync(`${idProv}_scores_2020.csv`, (val.join(',') + '\n'))
         })
     }))
+
+    console.log('\n<<-------------- DONE ! ------------->>\n')
 }
 
 module.exports = { writeToFile }

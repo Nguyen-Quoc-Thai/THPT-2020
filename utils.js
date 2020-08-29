@@ -63,11 +63,4 @@ async function getMaxIdOfProv (idProv, left, right){
     return getMaxIdOfProv(idProv, left, right)
 }
 
-async function testFunc (){
-
-    const res = await getMaxIdOfProv(50, -1, 100000)
-
-    console.log("Res: " + res)
-}
-
 module.exports = { getId, getMaxIdOfProv, provinces_1, provinces_2 }
